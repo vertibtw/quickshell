@@ -16,8 +16,9 @@ Item {
     }
 
     function reroll() {
-        if (folderModel.status !== FolderListModel.Ready || folderModel.count === 0) return
-        const idx = Math.floor(Math.random() * folderModel.count)
-        root.path = folderModel.get(idx, "filePath")
-    }    
+        if (folderModel.status !== FolderListModel.Ready || folderModel.count === 0)
+            return;
+        const idx = Math.floor(Math.random() * folderModel.count);
+        root.path = folderModel.get(idx, "filePath");
+    }
 }

@@ -23,11 +23,8 @@ Rectangle {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            root.parent.activeshader = root.shader
-            Quickshell.execDetached([
-                "sh", "-c",
-                `hyprctl eval 'hl.config({ decoration = { screen_shader = "${parent.shader}" } })'`
-            ])
+            root.parent.activeshader = root.shader;
+            Quickshell.execDetached(["sh", "-c", `hyprctl eval 'hl.config({ decoration = { screen_shader = "${parent.shader}" } })'`]);
         }
     }
 }

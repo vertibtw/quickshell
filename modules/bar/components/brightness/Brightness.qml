@@ -8,13 +8,13 @@ PopupWindow {
     id: popup
     required property var parentWindow
     visible: false
-    
-    implicitHeight: items.height 
-    implicitWidth: items.width 
+
+    implicitHeight: items.height
+    implicitWidth: items.width
 
     anchor.window: parentWindow
-    anchor.rect.x: parentWindow.width 
-    anchor.rect.y: parentWindow.height * 1.1   
+    anchor.rect.x: parentWindow.width
+    anchor.rect.y: parentWindow.height * 1.1
     grabFocus: true
 
     color: "transparent"
@@ -26,8 +26,8 @@ PopupWindow {
         running: true
         stdout: StdioCollector {
             onStreamFinished: {
-                var obj = JSON.parse(this.text)
-                items.activeshader = obj.str
+                var obj = JSON.parse(this.text);
+                items.activeshader = obj.str;
             }
         }
     }
@@ -60,7 +60,7 @@ PopupWindow {
                 shader: "/home/verti/.config/hypr/shaders/blue_light_filter.frag"
                 active: items.activeshader === shader
                 anchors.horizontalCenter: parent.horizontalCenter
-            }            
+            }
         }
     }
 }

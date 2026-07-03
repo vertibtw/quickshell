@@ -16,9 +16,9 @@ Item {
         color: Colors.foreground
         MouseArea {
             anchors.fill: parent
-            onClicked : {
-                console.log("visible", brightness_popup.visible)
-                brightness_popup.visible = !brightness_popup.visible
+            onClicked: {
+                console.log("visible", brightness_popup.visible);
+                brightness_popup.visible = !brightness_popup.visible;
             }
         }
     }

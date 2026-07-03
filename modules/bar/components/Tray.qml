@@ -36,7 +36,7 @@ Item {
                     id: icon
                     height: parentwindow?.height * 0.75
                     width: height
-                    source : {
+                    source: {
                         let icon = modelData.icon;
                         if (icon.includes("?path=")) {
                             const [name, path] = icon.split("?path=");
@@ -48,11 +48,11 @@ Item {
                     MouseArea {
                         anchors.fill: parent
                         acceptedButtons: Qt.LeftButton | Qt.RightButton
-                        onClicked: (mouse) => {
+                        onClicked: mouse => {
                             if (mouse.button == Qt.LeftButton) {
-                                modelData.activate()
+                                modelData.activate();
                             } else {
-                                menuanchor.open()
+                                menuanchor.open();
                             }
                         }
                     }

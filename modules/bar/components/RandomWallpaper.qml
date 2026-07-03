@@ -13,7 +13,6 @@ Item {
     implicitHeight: btn.height
     implicitWidth: btn.width
 
-
     RandomFile {
         id: randomwal
         dir: "/home/verti/Pictures/Wallpapers/"
@@ -25,14 +24,13 @@ Item {
         path: "/home/verti/.wallpaper"
     }
 
-
     Rectangle {
         id: btn
         implicitHeight: icon.height
         implicitWidth: icon.width
 
         color: "transparent"
-        
+
         Text {
             id: icon
             color: Colors.foreground
@@ -40,13 +38,14 @@ Item {
             text: ""
             MouseArea {
                 anchors.fill: parent
-                onClicked: (mouse) => {
+                onClicked: mouse => {
                     if (mouse.button === Qt.RightButton)
-                        randomwal.reroll() // temp 
+                        randomwal.reroll();
+                    // temp
                     else
-                        randomwal.reroll()
+                        randomwal.reroll();
                 }
             }
-        }    
+        }
     }
 }

@@ -16,7 +16,7 @@ Item {
         id: bg
         anchors.fill: parent
 
-        color: Colors.background2 
+        color: Colors.background2
         radius: Math.max(height, width) / 2
 
         Row {
@@ -30,10 +30,10 @@ Item {
                     id: workspace
                     required property HyprlandWorkspace modelData
 
-                    property bool idVisible: false;
+                    property bool idVisible: false
 
                     implicitWidth: modelData.focused ? 48 : 24
-                    implicitHeight: bar.height / 2 
+                    implicitHeight: bar.height / 2
 
                     radius: Math.max(height, width) / 2
 
@@ -59,7 +59,7 @@ Item {
                             duration: 200
                         }
                     }
-                
+
                     MouseArea {
                         anchors.fill: parent
                         hoverEnabled: true
@@ -73,8 +73,8 @@ Item {
                             Hyprland.dispatch("hl.dsp.focus({ workspace = " + workspace.modelData.id + "})");
                         }
                     }
-                } 
-            } 
+                }
+            }
         }
     }
 }

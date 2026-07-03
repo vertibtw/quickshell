@@ -9,7 +9,7 @@ PopupWindow {
     visible: false
 
     PwObjectTracker {
-        objects: [ Pipewire.defaultAudioSink ]
+        objects: [Pipewire.defaultAudioSink]
     }
 
     required property var parentWindow
@@ -17,8 +17,8 @@ PopupWindow {
 
     anchor.window: parentWindow
 
-    anchor.rect.x: parentWindow.width 
-    anchor.rect.y: parentWindow.height * 1.1  
+    anchor.rect.x: parentWindow.width
+    anchor.rect.y: parentWindow.height * 1.1
 
     implicitWidth: content.width
     implicitHeight: content.height
@@ -44,12 +44,12 @@ PopupWindow {
                 value: root.vol
 
                 anchors.verticalCenter: parent.verticalCenter
-                
+
                 background: Rectangle {
                     id: bg
                     color: Colors.grey
                     implicitWidth: 100
-                    implicitHeight: root.parentWindow.height * 0.4 
+                    implicitHeight: root.parentWindow.height * 0.4
 
                     Rectangle {
                         implicitHeight: parent.height
@@ -69,7 +69,7 @@ PopupWindow {
 
                 onMoved: {
                     if (Pipewire.defaultAudioSink)
-                        Pipewire.defaultAudioSink.audio.volume = value / 100
+                        Pipewire.defaultAudioSink.audio.volume = value / 100;
                 }
             }
         }

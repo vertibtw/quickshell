@@ -12,15 +12,14 @@ Item {
     id: root
     width: childrenRect.width
     height: childrenRect.height
-    required property var wallpapermod 
+    required property var wallpapermod
 
     Variants {
         model: Quickshell.screens
         PanelWindow {
+            id: bar
             required property var modelData
             screen: modelData
-
-            id: bar
 
             visible: States.bar_visible
 
@@ -44,7 +43,7 @@ Item {
             }
 
             Rectangle {
-                implicitHeight: rl.implicitHeight 
+                implicitHeight: rl.implicitHeight
                 implicitWidth: rl.implicitWidth + 20 // +20 for padding
 
                 anchors.left: parent.left
@@ -61,7 +60,9 @@ Item {
                     anchors.centerIn: parent
 
                     // components
-                    RandomWallpaper { wal: root.wallpapermod }
+                    RandomWallpaper {
+                        wal: root.wallpapermod
+                    }
                     Screenshot {}
                     Media {}
                     Workspaces {}
@@ -77,7 +78,7 @@ Item {
             }
 
             Rectangle {
-                implicitHeight: rr.implicitHeight 
+                implicitHeight: rr.implicitHeight
                 implicitWidth: rr.implicitWidth + 20 // +20 for padding
 
                 anchors.right: parent.right
@@ -93,9 +94,15 @@ Item {
                     spacing: 6
                     anchors.centerIn: parent
                     Clock {}
-                    Tray {parentwindow: bar}
-                    BrightnessButton{brightness_popup: brightness_popup}
-                    VolumeButton {volwidget: vol_popup}
+                    Tray {
+                        parentwindow: bar
+                    }
+                    BrightnessButton {
+                        brightness_popup: brightness_popup
+                    }
+                    VolumeButton {
+                        volwidget: vol_popup
+                    }
                     Battery {}
                 }
             }

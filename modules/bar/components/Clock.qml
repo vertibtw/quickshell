@@ -12,7 +12,6 @@ Item {
     implicitHeight: r.height
     implicitWidth: r.width
 
-
     Row {
         id: r
         spacing: 8
@@ -38,7 +37,7 @@ Item {
             }
 
             Component.onCompleted: {
-                clock.text = Qt.formatDateTime(new Date(), root.format)
+                clock.text = Qt.formatDateTime(new Date(), root.format);
             }
         }
     }

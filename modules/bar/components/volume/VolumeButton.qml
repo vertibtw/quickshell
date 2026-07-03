@@ -12,23 +12,23 @@ Item {
     Text {
         id: icon
         color: Colors.foreground
-        text : {
+        text: {
             if (volwidget.vol === 0) {
-                return "󰝟"
+                return "󰝟";
             } else if (volwidget.vol <= 30) {
-                return "󰕿"
+                return "󰕿";
             } else if (volwidget.vol <= 60) {
-                return "󰖀"
+                return "󰖀";
             } else if (volwidget.vol <= 100) {
-                return "󰕾"
+                return "󰕾";
             }
         }
 
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                volwidget.visible = !volwidget.visible
-                States.bar_vol_popup_visible = !bar_vol_popup_visible
+                volwidget.visible = !volwidget.visible;
+                States.bar_vol_popup_visible = !bar_vol_popup_visible;
             }
         }
     }

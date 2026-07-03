@@ -6,9 +6,7 @@ import Quickshell.Services.Mpris
 Item {
     id: root
 
-    property var player: Mpris.players.values.find(p => p.playbackState === MprisPlaybackState.Playing)
-                         ?? Mpris.players.values[0]
-                         ?? null
+    property var player: Mpris.players.values.find(p => p.playbackState === MprisPlaybackState.Playing) ?? Mpris.players.values[0] ?? null
 
     implicitWidth: mediarow.width
     implicitHeight: mediarow.height
@@ -47,25 +45,28 @@ Item {
                         duration: 4000
                         easing.type: Easing.Linear
                     }
-                    
-                    PauseAnimation { duration: 1000 }
-                    
+
+                    PauseAnimation {
+                        duration: 1000
+                    }
+
                     PropertyAnimation {
                         from: titleclip.width - titletext.implicitWidth - 10
                         to: 0
                         duration: 4000
                         easing.type: Easing.Linear
                     }
-                    PauseAnimation { duration: 1000 }
+                    PauseAnimation {
+                        duration: 1000
+                    }
                 }
             }
         }
-
     }
     MouseArea {
         anchors.fill: mediarow
         onClicked: {
-            root.player.togglePlaying()
+            root.player.togglePlaying();
         }
     }
 }

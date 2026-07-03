@@ -7,7 +7,11 @@ import qs.modules.wallpaper
 import qs.modules.osd
 
 ShellRoot {
-    Wallpaper {id: wall}
-    Bar {wallpapermod: wall}
+    Wallpaper {
+        id: wall
+    }
+    Bar {
+        wallpapermod: wall
+    }
     VolumeOsd {}
 }

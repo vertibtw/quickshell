@@ -12,9 +12,9 @@ Item {
         id: srcfile
         path: "/home/verti/.wallpaper"
         watchChanges: true
-        
+
         onFileChanged: reload()
-        onLoaded:      src = "file://" + text().trim()
+        onLoaded: src = "file://" + text().trim()
         onTextChanged: src = "file://" + text().trim()
     }
 
@@ -26,10 +26,10 @@ Item {
             screen: modelData
 
             anchors {
-                left:true
-                right:true
-                top:true
-                bottom:true
+                left: true
+                right: true
+                top: true
+                bottom: true
             }
 
             color: "transparent"

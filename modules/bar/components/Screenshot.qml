@@ -14,7 +14,7 @@ Item {
         implicitWidth: icon.width
 
         color: "transparent"
-        
+
         Text {
             id: icon
             color: Colors.foreground
@@ -23,13 +23,9 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    Quickshell.execDetached([
-                        "sh",
-                        "-c",
-                        'grim -g "$(slurp)" - | convert - -resize 200% png:- | wl-copy'
-                    ])
+                    Quickshell.execDetached(["sh", "-c", 'grim -g "$(slurp)" - | convert - -resize 200% png:- | wl-copy']);
                 }
             }
-        }    
+        }
     }
 }
